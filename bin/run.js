@@ -74,7 +74,7 @@ exports['ose-gaia'] = {  // {{{2
 exports['ose-test'] = {  // {{{2
   suites: [
     'ose/test',
-    'ose-pim/test',
+    'ose-test/test',
   ],
 };
 
