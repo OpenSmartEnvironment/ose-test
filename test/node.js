@@ -12,7 +12,6 @@ require('ose/lib/plugins').read({  // {{{1
     sid: 1,               // Shard id unique within the space
     scope: 'test',         // Scope the shard belongs to
     alias: 'testShard',    // Shard alias
-    schema: 'ose/lib/shard/level',
   },
 
   testDashboard: function(name, val, deps) {  // {{{2
