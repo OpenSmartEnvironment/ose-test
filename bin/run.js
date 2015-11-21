@@ -2,7 +2,7 @@
 
 'use strict';
 
-var O = require('ose').app(module, 'OSE test suite');
+var O = require('ose').module(module);
 
 // Public {{{1
 exports.ose = {  // {{{2
@@ -74,7 +74,8 @@ exports['ose-gaia'] = {  // {{{2
 exports['ose-test'] = {  // {{{2
   suites: [
     'ose/test',
-    'ose-test/test',
+    'ose-fs/test',
+//    'ose-test/test',
   ],
 };
 
