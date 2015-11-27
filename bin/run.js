@@ -75,7 +75,7 @@ exports['ose-test'] = {  // {{{2
   suites: [
     'ose/test',
     'ose-fs/test',
-//    'ose-test/test',
+    'ose-test/test',
   ],
 };
 
