@@ -16,7 +16,12 @@ var Email = 'snaselj@gmail.com';
 var Alias = 'snaselj';
 
 exports.cleanup = function(err) {  // {{{2
-  exports.shard.removeCommand('test');
+  if (exports.shard) {
+    exports.shard.removeCommand('test');
+    delete exports.shard;
+  }
+
+  delete exports.space;
 
   exports.socket && exports.socket.removeAllListeners();
   exports.entrySocket && exports.entrySocket.removeAllListeners();
@@ -36,8 +41,6 @@ exports.add('Get space', function(cb) {  // {{{2
     Equal('testSpace', space.name, 'exports.space name');
 
     exports.space = space;
-
-//    return setTimeout(cb, 3000);
 
     return cb();
   });
