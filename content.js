@@ -26,5 +26,6 @@ exports.addModule('node_modules/chai/chai.js', 'chai');
 exports.addModule('lib/browser');
 exports.addModule('lib/gaia');
 exports.addModule('lib/index');
-exports.addModule('lib/kind/index');
+//exports.addModule('lib/kind/index');
 exports.addModule('lib/suite');
+

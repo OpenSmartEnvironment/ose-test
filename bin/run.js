@@ -62,7 +62,7 @@ exports.http = {  // {{{2
   port: 4432,
 };
 
-exports['ose-gaia'] = {  // {{{2
+exports['ose-html5'] = {  // {{{2
   dashboard: [],
   defaultStateObj:{
     content: {
@@ -75,7 +75,7 @@ exports['ose-test'] = {  // {{{2
   suites: [
     'ose/test',
     'ose-fs/test',
-    'ose-test/test',
+//    'ose-test/test',
   ],
 };
 

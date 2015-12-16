@@ -8,6 +8,8 @@ if (O.runtime === 'browser') {
   require('ose-test').add(require('./browser'));
 }
 
+require('./schema');
+
 var Assert = O.chai.assert;
 var Equal = Assert.equal;
 
@@ -34,7 +36,7 @@ exports.cleanup = function(err) {  // {{{2
 };
 
 exports.add('Get space', function(cb) {  // {{{2
-  O.getSpace('testSpace', function(err, space) {
+  O.data.getSpace('testSpace', function(err, space) {
     if (err) return cb(err);
 
     Equal(space.SUBJECT_STATE.READY, space.subjectState, 'exports.space state');
