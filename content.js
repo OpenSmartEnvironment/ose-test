@@ -24,7 +24,7 @@ exports.addModule('node_modules/assert/assert.js', 'assert');
 exports.addModule('node_modules/chai/chai.js', 'chai');
 
 exports.addModule('lib/browser');
-exports.addModule('lib/gaia');
+exports.addModule('lib/html5');
 exports.addModule('lib/index');
 //exports.addModule('lib/kind/index');
 exports.addModule('lib/suite');
