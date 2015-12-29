@@ -4,6 +4,8 @@ var O = require('ose').object(module, 'ose/lib/kind');
 exports = O.init('test', 'kind');
 
 // Public {{{1
+throw O.log.todo();
+
 exports.dprofile = true;
 
 exports.addDdes();
