@@ -73,7 +73,7 @@ exports.add('Get shard', function(cb) {  // {{{2
 });
 
 exports.add('Add entry', {runtime: 'node'}, function(cb) {  // {{{2
-  var trans = exports.shard.startTrans();
+  var trans = exports.shard.transaction();
 
   trans.add('kind', {
     alias: Alias,
@@ -182,7 +182,7 @@ exports.add('Update entry node', {runtime: 'node'}, function(cb) {  // {{{2
     return cb();
   });
 
-  var trans = exports.shard.startTrans();
+  var trans = exports.shard.transaction();
   trans.patch(exports.entry, {
     email: Email,
     alias: Alias,
@@ -254,7 +254,7 @@ exports.add('Delete entry', function(cb) {  // {{{2
   }
 
   return exports.socket.once('can', function() {  // Wait for the browser
-    var trans = exports.shard.startTrans();
+    var trans = exports.shard.transaction();
     trans.del(exports.entry);
     trans.commit(function(err) {
       if (err) cb(err);
@@ -272,7 +272,7 @@ exports.add('Find deleted entry', function(cb) {  // {{{2
 });
 
 exports.add('Generate entries', {runtime: 'node'}, function(cb) {  // {{{2
-  var trans = exports.shard.startTrans();
+  var trans = exports.shard.transaction();
 
   for (var i = 0; i < 3; i++) {
     trans.add('kind', {
