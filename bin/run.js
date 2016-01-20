@@ -2,7 +2,7 @@
 
 'use strict';
 
-var O = require('ose').module(module);
+const O = require('ose')(module);
 
 // Public {{{1
 exports.ose = {  // {{{2

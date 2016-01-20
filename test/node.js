@@ -1,6 +1,6 @@
 'use strict';
 
-var O = require('ose').module(module);
+const O = require('ose')(module);
 
 var Content = require('../content');
 Content.addModule('test/browser');
@@ -23,7 +23,7 @@ require('ose/lib/plugins').read({  // {{{1
       caption: 'Aliases',
       view: 'list',
       ident: {
-        map: 'alias',
+        query: 'alias',
         shard: 'testShard',
       }
     });
@@ -31,7 +31,7 @@ require('ose/lib/plugins').read({  // {{{1
       caption: 'Kinds',
       view: 'list',
       ident: {
-        map: 'kind/name',
+        query: 'kind/name',
         shard: 'testShard',
       }
     });

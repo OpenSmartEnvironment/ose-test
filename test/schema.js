@@ -1,6 +1,9 @@
 'use strict';
 
-var O = require('ose').object(module, 'ose-level');
+const O = require('ose')(module)
+  .singleton('ose-level')
+;
+
 exports = O.init('test');
 
 require('./kind');

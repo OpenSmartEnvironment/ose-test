@@ -1,6 +1,9 @@
 'use strict';
 
-var O = require('ose').object(module, '../lib/suite');
+const O = require('ose')(module)
+  .singleton('../lib/suite')
+;
+
 exports = O.init('test/test/browser');
 
 var Gaia = require('ose-test/lib/gaia');
