@@ -65,7 +65,7 @@ exports.http = {  // {{{2
 exports['ose-html5'] = {  // {{{2
   dashboard: [],
   defaultStateObj:{
-    content: {
+    main: {
       view: 'dashboard',
     }
   }
