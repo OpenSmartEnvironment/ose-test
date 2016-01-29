@@ -16,10 +16,10 @@ var Equal = Assert.equal;
 
 // Tests {{{1
 exports.add('Dashboard', function(cb) {  // {{{2
-  return O.ui.display({main: {view: 'dashboard'}}, 'user', function(err) {
+  return O.ui.body.display({main: {view: 'dashboard'}}, 'user', function(err) {
     if (err) return cb(err);
 
-    var d = Find(O.ui.main, 'gaia-list');
+    var d = Find(O.ui.body.main, 'gaia-list');
     Html(d.header, 'Dashboard');
     var items = List(d, 'li>div>h3', ['Aliases', 'Kinds']);
 
@@ -32,7 +32,7 @@ exports.add('Dashboard', function(cb) {  // {{{2
       // Display list by clicking on "Aliases"
 
 
-      var list = Find(O.ui.main, 'gaia-list');
+      var list = Find(O.ui.body.main, 'gaia-list');
       var fn = list.doAfterDisplay;
       Assert(Boolean(fn), 'After display handler');
 
@@ -55,7 +55,7 @@ exports.add('List aliases', function(cb) {  // {{{2
   Gaia.awaitView(cb);
   /*
 
-  var list = Find(O.ui.main, 'gaia-list');
+  var list = Find(O.ui.body.main, 'gaia-list');
   var fn = list.doAfterDisplay;
   Assert(Boolean(fn), 'After display handler');
 
