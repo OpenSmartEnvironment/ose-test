@@ -6,10 +6,10 @@ const O = require('ose')(module)
 
 exports = O.init('test/test/browser');
 
-var Gaia = require('ose-test/lib/gaia');
-var Find = Gaia.find;
-var List = Gaia.list;
-var Html = Gaia.html;
+var Html5 = require('ose-test/lib/html5');
+var Find = Html5.find;
+var List = Html5.list;
+var Html = Html5.html;
 
 var Assert = O.chai.assert;
 var Equal = Assert.equal;
@@ -19,13 +19,13 @@ exports.add('Dashboard', function(cb) {  // {{{2
   return O.ui.body.display({main: {view: 'dashboard'}}, 'user', function(err) {
     if (err) return cb(err);
 
-    var d = Find(O.ui.body.main, 'gaia-list');
+    var d = Find(O.ui.body.main, 'ul');
     Html(d.header, 'Dashboard');
     var items = List(d, 'li>div>h3', ['Aliases', 'Kinds']);
 
     return O.async.nextTick(function() {
       items[0].click();
-      exports.view = Gaia.awaitView(cb);
+      exports.view = Html5.awaitView(cb);
     });
 
     /*
@@ -52,7 +52,7 @@ exports.add('List aliases', function(cb) {  // {{{2
   var items = List(exports.view, 'li', 3);
   items[0].click();
 
-  Gaia.awaitView(cb);
+  Html5.awaitView(cb);
   /*
 
   var list = Find(O.ui.body.main, 'gaia-list');

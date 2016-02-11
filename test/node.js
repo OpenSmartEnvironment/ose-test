@@ -5,7 +5,7 @@ const O = require('ose')(module);
 var Content = require('../content');
 Content.addModule('test/browser');
 Content.addModule('test/index');
-Content.addModule('test/kind/gaia/detail');
+Content.addModule('test/kind/html5/detail');
 Content.addModule('test/kind/index');
 Content.addModule('test/schema');
 
@@ -18,7 +18,7 @@ require('ose/lib/plugins').read({  // {{{1
   },
 
   testDashboard: function(name, val, deps) {  // {{{2
-    var d = require('ose/lib/plugins').plugins['ose-gaia'].data.dashboard;
+    var d = require('ose/lib/plugins').plugins['ose-html5'].data.dashboard;
     d.push({
       caption: 'Aliases',
       view: 'list',
